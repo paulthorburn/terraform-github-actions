@@ -3,7 +3,7 @@
 function terraformPlan {
   # Gather the output of `terraform plan`.
   echo "plan: info: planning Terraform configuration in ${tfWorkingDir}"
-  planOutput=$(terragrunt_linux_amd64 plan-all plan -detailed-exitcode -input=false ${*} 2>&1)
+  planOutput=$(terragrunt_linux_amd64 plan-all -detailed-exitcode -input=false ${*} 2>&1)
   planExitCode=${?}
   planHasChanges=false
   planCommentStatus="Failed"
